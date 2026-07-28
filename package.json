@@ -1,0 +1,32 @@
+{
+  "name": "playwright-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:master": "playwright test --grep @master",
+    "test:sanity": "playwright test --grep @sanity",
+    "test:regression": "playwright test --grep @regression",
+    "test:datadriven": "playwright test --grep @datadriven",
+    "test:datadriven:headed": "playwright test --grep @datadriven --headed",
+    "test:master:headed": "playwright test --grep @master --headed",
+    "test:sanity:debug": "playwright test --grep @sanity --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "allure-playwright": "^3.10.2"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@faker-js/faker": "^10.5.0",
+    "csv-parse": "^7.0.1",
+    "xlsx": "^0.18.5"
+  }
+}
