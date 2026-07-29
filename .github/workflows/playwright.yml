@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Playwright tests
         env:
-          APP_URL: https://your-domain/opencart/upload/
+          APP_URL: ${{ vars.APP_URL }}
         run: npm run test:sanity
         #run: npx playwright test
         #run: npx playwright test --grep "@sanity"
