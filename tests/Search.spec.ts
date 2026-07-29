@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { SearchResultsPage } from '../pages/SearchResultsPage';
-import { TestConfig } from '../test.config';
+import { test, expect } from "@playwright/test";
+import { HomePage } from "../pages/HomePage";
+import { SearchResultsPage } from "../pages/SearchResultsPage";
+import { TestConfig } from "../test.config";
 
 let config: TestConfig;
 let homePage: HomePage;
@@ -18,14 +18,15 @@ test.afterEach(async ({ page }) => {
   await page.close();
 });
 
-test('Product search test @master @regressionProduct search test @master @regression', async ({ page }) => {
+test("Product search test @master @regression @sanity", async ({ page }) => {
   const productName = config.productName;
 
   await homePage.searchProduct(productName);
 
-  const isSearchResultsPageExists = await searchResultsPage.isSearchResultsPageExists();
+  const isSearchResultsPageExists =
+    await searchResultsPage.isSearchResultsPageExists();
   expect(isSearchResultsPageExists).toBeTruthy();
 
   const isProductExists = await searchResultsPage.isProductExists();
   expect(isProductExists).toBeTruthy();
-})
+});

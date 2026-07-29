@@ -21,7 +21,7 @@ test.afterEach(async ({ page }) => {
   await page.close();
 });
 
-test("User login test", async ({ page }) => {
+test("User login test @sanity", async ({ page }) => {
   await homePage.clickMyAccount();
   await homePage.clickLogin();
 

@@ -22,7 +22,7 @@ test.afterEach(async ({ page }) => {
   page.close();
 });
 
-test("Add product to cart test @master @regression", async ({ page }) => {
+test("Add product to cart test @master @regression @sanity", async ({ page }) => {
   const productName = config.productName;
 
   await homePage.searchProduct(productName);

@@ -22,7 +22,7 @@ test.afterEach(async ({ page }) => {
   await page.close();
 });
 
-test("User logout test @master @regression", async ({ page }) => {
+test("User logout test @master @regression @sanity", async ({ page }) => {
   await homePage.clickMyAccount();
   await homePage.clickLogin();
 
