@@ -25,9 +25,11 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
+        env:
+          APP_URL: https://your-domain/opencart/upload/
+        run: npm run test:sanity
         #run: npx playwright test
         #run: npx playwright test --grep "@sanity"
-        run: npm run test:sanity
 
       - name: Upload Playwright HTML Report
         if: always()

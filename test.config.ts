@@ -1,5 +1,7 @@
+import process from "process";
+
 export class TestConfig {
-  appUrl = "http://localhost/opencart/upload/";
+  appUrl = process.env.APP_URL ?? "http://localhost/opencart/upload/";
 
   email = "test@test.com";
   password = "test@123";
