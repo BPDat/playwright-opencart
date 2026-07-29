@@ -11,11 +11,11 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.lnkMyAccount = page.locator("span:has-text('My Account')");
     this.lnkRegister = page.getByRole("link", { name: "Register" });
     this.lnkLogin = page.getByRole("link", { name: "Login" });
-    this.txtSearchbox = page.getByPlaceholder("Search");
-    this.btnSearch = page.locator(".input-group>button[type='submit']");
+    this.lnkMyAccount = page.getByRole("link", { name: "My Account" });
+    this.txtSearchbox = page.locator("input[name='search']");
+    this.btnSearch = page.locator("button[type='submit']");
   }
 
   async isPageExists() {
@@ -26,6 +26,7 @@ export class HomePage {
 
   async clickMyAccount() {
     try {
+      await this.lnkMyAccount.waitFor();
       await this.lnkMyAccount.click();
     } catch (error) {
       console.error("Error occurred while clicking My Account link:", error);
@@ -51,6 +52,7 @@ export class HomePage {
 
   async searchProduct(productName: string): Promise<void> {
     try {
+      await this.txtSearchbox.waitFor();
       await this.txtSearchbox.fill(productName);
       await this.btnSearch.click();
     } catch (error) {
