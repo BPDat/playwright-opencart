@@ -102,8 +102,6 @@ async function addProductToCart(page: Page) {
   await productPage?.setQuantity(productQuantity);
   await productPage?.addProductToCart("2");
 
-  await page.waitForTimeout(3000);
-
   expect(await productPage?.isConfirmationMessageVisible()).toBe(true);
 }
 
