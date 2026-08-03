@@ -15,7 +15,7 @@ export class HomePage {
     this.lnkRegister = page.getByRole("link", { name: "Register" });
     this.lnkLogin = page.getByRole("link", { name: "Login" });
     this.txtSearchbox = page.getByPlaceholder("Search");
-    this.btnSearch = page.locator(".input-group>button[type='submit']");
+    this.btnSearch = page.locator(".input-group>.input-group-btn");
   }
 
   async isPageExists() {

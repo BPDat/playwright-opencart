@@ -2,7 +2,7 @@ export class TestConfig {
   // appUrl = "http://localhost/opencart/upload/";
   appUrl = "https://tutorialsninja.com/demo/";
 
-  email = "test@test.com";
+  email = "testtes123123123t@test.com";
   password = "test@123";
 
   //product details
