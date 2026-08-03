@@ -5,7 +5,7 @@ import { DataProvider } from "../utils/dataProvider";
 import { HomePage } from "../pages/HomePage";
 import { TestConfig } from "../test.config";
 
-const jsonPath = "data/loginData.json";
+const jsonPath = "data/logindata.json";
 const jsonTestData = DataProvider.getDataFromJson(jsonPath);
 
 for (const data of jsonTestData) {
