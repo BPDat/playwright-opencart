@@ -12,7 +12,7 @@ export class MyAccountPage {
     this.page = page;
     this.lnkMyAccount = page.locator("span:has-text('My Account')");
     this.lnkLogout = page.getByRole("link", { name: "Logout" });
-    this.msgHeading = page.locator("h1:has-text('My Account')");
+    this.msgHeading = page.locator("h2:has-text('My Account')");
   }
 
   async isMyAccountPageExists(): Promise<boolean> {

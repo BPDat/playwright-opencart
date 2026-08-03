@@ -59,8 +59,10 @@ export class SearchResultsPage {
         if (productName === product) {
           const productCurrent = this.searchProducts
             .nth(i)
-            .locator("xpath=ancestor::div[@class='content']")
-            .locator("button[title='Add to Cart']");
+            .locator("xpath=ancestor::div[@class='caption']")
+            .locator(
+              "xpath=following-sibling::div[@class='button-group']/button[contains(.,'Add to Cart')]",
+            );
           await productCurrent.click();
           break;
         }
