@@ -37,13 +37,22 @@ export default defineConfig({
     permissions: ["geolocation"],
     userAgent:
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    launchOptions: {
+      slowMo: 300,
+      args: ["--disable-blink-features=AutomationControlled"],
+    },
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      // name: "chromium",
+      // use: { ...devices["Desktop Chrome"] },
+      name: "Google Chrome",
+      use: {
+        ...devices["Desktop Chrome"],
+        channel: "chrome",
+      },
     },
 
     /* Test against mobile viewports. */
