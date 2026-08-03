@@ -25,6 +25,8 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
+        env:
+          APP_URL: https://demo.opencart.com/
         run: npm run test:sanity
         #run: npx playwright test
         #run: npx playwright test --grep "@sanity"

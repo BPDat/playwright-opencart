@@ -1,8 +1,8 @@
 export class TestConfig {
-  appUrl = "http://localhost/opencart/upload/";
+  appUrl = process.env.APP_URL || "http://localhost/opencart/upload/";
 
-  email = "test@test.com";
-  password = "test@123";
+  email = process.env.TEST_EMAIL || "test@test.com";
+  password = process.env.TEST_PASSWORD || "test@123";
 
   //product details
   productName = "MacBook";
