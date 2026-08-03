@@ -13,7 +13,10 @@ for (const data of jsonTestData) {
     page,
   }) => {
     const config = new TestConfig();
-    await page.goto(config.appUrl);
+    await page.goto(config.appUrl, {
+      waitUntil: "networkidle",
+      timeout: 60000,
+    });
 
     const homePage = new HomePage(page);
     await homePage.clickMyAccount();
