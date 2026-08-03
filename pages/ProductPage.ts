@@ -18,7 +18,7 @@ export class ProductPage {
     this.cnfMsg = page.locator(".alert.alert-success.alert-dismissible");
     this.btnItems = page.locator("#cart>div>button");
     this.lnkViewCart = page.locator('strong:has-text("View Cart")');
-    this.productHeading = page.locator("h1");
+    this.productHeading = page.locator("#content h1");
   }
 
   async isProductPageExists(productName: string): Promise<boolean> {
