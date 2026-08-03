@@ -9,7 +9,10 @@ let searchResultsPage: SearchResultsPage;
 
 test.beforeEach(async ({ page }) => {
   config = new TestConfig();
-  await page.goto(config.appUrl);
+  await page.goto(config.appUrl, {
+    waitUntil: "networkidle",
+    timeout: 60000,
+  });
   homePage = new HomePage(page);
   searchResultsPage = new SearchResultsPage(page);
 });

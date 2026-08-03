@@ -11,7 +11,10 @@ let productPage: ProductPage;
 
 test.beforeEach(async ({ page }) => {
   config = new TestConfig();
-  await page.goto(config.appUrl);
+  await page.goto(config.appUrl, {
+    waitUntil: "networkidle",
+    timeout: 60000,
+  });
 
   homePage = new HomePage(page);
   searchResultsPage = new SearchResultsPage(page);
@@ -22,7 +25,9 @@ test.afterEach(async ({ page }) => {
   page.close();
 });
 
-test("Add product to cart test @master @regression @sanity", async ({ page }) => {
+test("Add product to cart test @master @regression @sanity", async ({
+  page,
+}) => {
   const productName = config.productName;
 
   await homePage.searchProduct(productName);

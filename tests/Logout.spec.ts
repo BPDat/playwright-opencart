@@ -12,7 +12,10 @@ let myAccountPage: MyAccountPage;
 
 test.beforeEach(async ({ page }) => {
   config = new TestConfig();
-  await page.goto(config.appUrl);
+  await page.goto(config.appUrl, {
+    waitUntil: "networkidle",
+    timeout: 60000,
+  });
   homePage = new HomePage(page);
   loginPage = new LoginPage(page);
   myAccountPage = new MyAccountPage(page);
